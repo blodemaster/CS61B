@@ -117,9 +117,6 @@ public class IntList {
         return res.rest;
     }
 
-    public static void main(String[] args) {
-
-    }
 
 
 
