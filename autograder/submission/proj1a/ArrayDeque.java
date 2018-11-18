@@ -1,4 +1,4 @@
-public class ArrayDeqeue<T> {
+public class ArrayDeque<T> {
     private T[] array;
     private int size;
     private int start;
@@ -15,7 +15,7 @@ public class ArrayDeqeue<T> {
         return (start + index) % this.array.length;
     }
 
-    public ArrayDeqeue() {
+    public ArrayDeque() {
         this.array = (T[]) new Object[2];
         this.size = 0;
     }
@@ -64,7 +64,7 @@ public class ArrayDeqeue<T> {
     public int size() {
         return this.size;
     }
-    public void printDeqeue() {
+    public void printDeque() {
         for (int i = 0; i < this.size; i++) {
             int currentIndex = indexConversion(i);
             System.out.print(this.array[currentIndex] + " ");
