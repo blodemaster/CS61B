@@ -1,6 +1,6 @@
 public class ArrayDeqeue<T> {
-    public T[] array;
-    public int size;
+    private T[] array;
+    private int size;
     private int start;
 
     private static int RESIZE_FACTOR = 2;
@@ -34,7 +34,7 @@ public class ArrayDeqeue<T> {
             auxArray[0] = item;
             for (int i = 0; i < this.size; i++) {
                 int index = indexConversion(i);
-                auxArray[i+1]= this.array[index];
+                auxArray[i + 1] = this.array[index];
             }
             this.start = 0;
             this.array = auxArray;
@@ -83,7 +83,7 @@ public class ArrayDeqeue<T> {
             T[] auxArray = (T[]) new Object[arrLen / 2];
             for (int i = 1; i < this.size; i++) {
                 int index = indexConversion(i);
-                auxArray[i-1] = this.array[index];
+                auxArray[i - 1] = this.array[index];
             }
             this.start = 0;
             this.array = auxArray;
@@ -99,9 +99,9 @@ public class ArrayDeqeue<T> {
         int arrLen = this.array.length;
         this.size--;
 
-        T toReturn = this.array[this.start+this.size];
+        T toReturn = this.array[this.start + this.size];
         if (this.size > (USAGE_FACTOR * arrLen)) {
-            this.array[this.start+this.size] = null;
+            this.array[this.start + this.size] = null;
         } else {
             T[] auxArray = (T[]) new Object[arrLen / 2];
             for (int i = 0; i < this.size; i++) {
